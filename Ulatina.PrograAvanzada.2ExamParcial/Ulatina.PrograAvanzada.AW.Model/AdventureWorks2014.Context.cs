@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ulatina.PrograAvanzada.AW.Model
+namespace AW.Model
 {
     using System;
     using System.Data.Entity;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ulatina.PrograAvanzada.AW.Model
+namespace AW.Model
 {
     public class Class1
     {
