@@ -10,17 +10,23 @@ namespace AW.WCF.Dominio.Repositorio
 
         public Factura()
         {
-        }
+        }               
 
-        public IList<Model.SalesOrderHeader> FaturasRangoFecha( int fecha)
+        public IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeader.Where(p => fechaInferior <= p.DueDate && p.DueDate <= fechaSuperior).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(string fecha)
+        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(decimal rangoInferior, decimal rangoSuperior)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeader.Where(p => rangoInferior <= p.TotalDue && p.TotalDue <= rangoSuperior).ToList();
+            return laFactura;
+        }
+
+        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento)
+        {
+            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.sa)
             return laFactura;
         }
 
@@ -30,11 +36,7 @@ namespace AW.WCF.Dominio.Repositorio
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(int fecha)
-        {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
-            return laFactura;
-        }
+        
 
         public IList<Model.SalesOrderHeader> FaturasRangoTotal(int fecha)
         {

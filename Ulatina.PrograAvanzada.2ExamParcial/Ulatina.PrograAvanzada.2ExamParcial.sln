@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ulatina.PrograAvanzada.AW.WCF", "Ulatina.PrograAvanzada.AW.WCF\Ulatina.PrograAvanzada.AW.WCF.csproj", "{0A6F689D-8CFB-4087-914E-3A6674A334B9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ulatina.PrograAvanzada.AW.Model", "Ulatina.PrograAvanzada.AW.Model\Ulatina.PrograAvanzada.AW.Model.csproj", "{606915B6-F8DA-41B9-B5BC-022C480E4B7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ulatina.PrograAvanzada.AdventureWorks", "Ulatina.PrograAvanzada.AdventureWorks\Ulatina.PrograAvanzada.AdventureWorks.csproj", "{9B5891A6-E8A4-4C55-974D-297117C27213}"
 EndProject
@@ -19,10 +17,6 @@ Global
 		{0A6F689D-8CFB-4087-914E-3A6674A334B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A6F689D-8CFB-4087-914E-3A6674A334B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A6F689D-8CFB-4087-914E-3A6674A334B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{606915B6-F8DA-41B9-B5BC-022C480E4B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{606915B6-F8DA-41B9-B5BC-022C480E4B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{606915B6-F8DA-41B9-B5BC-022C480E4B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{606915B6-F8DA-41B9-B5BC-022C480E4B7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B5891A6-E8A4-4C55-974D-297117C27213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B5891A6-E8A4-4C55-974D-297117C27213}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B5891A6-E8A4-4C55-974D-297117C27213}.Release|Any CPU.ActiveCfg = Release|Any CPU

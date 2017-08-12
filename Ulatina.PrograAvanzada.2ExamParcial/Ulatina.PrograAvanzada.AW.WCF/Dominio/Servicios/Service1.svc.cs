@@ -12,23 +12,29 @@ namespace AW.WCF
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
-
-
-
     {
-        public IList<Model.SalesOrderHeader> FaturasRangoFecha(int fecha)
+        
+
+        public IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
 
             var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FaturasRangoFecha(fecha);
+            var laFactura = laAccion.FaturasRangoFecha(fechaInferior,fechaSuperior);
             return laFactura;
 
         }
 
-        public IList<SalesOrderHeader> FaturaArticulosOrdenRango(string fecha)
+        public IList<SalesOrderHeader> FaturaArticulosOrdenRango(decimal rangoInferior, decimal rangoSuperior)
         {
             var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FaturaArticulosOrdenRango(fecha);
+            var laFactura = laAccion.FaturaArticulosOrdenRango(rangoInferior, rangoSuperior);
+            return laFactura;
+        }
+
+        public IList<SalesOrderHeader> FaturaMontoDescuento(decimal descuento)
+        {
+            var laAccion = new Dominio.Acciones.Factura();
+            var laFactura = laAccion.FaturaMontoDescuento(descuento);
             return laFactura;
         }
 
@@ -39,12 +45,7 @@ namespace AW.WCF
             return laFactura;
         }
 
-        public IList<SalesOrderHeader> FaturaMontoDescuento(int fecha)
-        {
-            var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FaturaMontoDescuento(fecha);
-            return laFactura;
-        }
+        
 
 
 

@@ -40,15 +40,16 @@ namespace AW.WCF
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasRangoFecha(int fecha);
+        IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasRangoTotal(int fecha);
+        IList<Model.SalesOrderHeader> FaturasRangoTotal(decimal rangoInferior, decimal rangoSuperior);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturaMontoDescuento(int fecha);
+        IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento);
 
         [OperationContract]
         IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(string fecha);

@@ -9,17 +9,26 @@ namespace  AW.WCF.Dominio.Especificaciones
         {
         }
 
-        public IList<Model.SalesOrderHeader> FaturasRangoFecha(int fecha)
+        
+
+        public IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
             var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FaturasRangoFecha(fecha);
+            var laFactura = elRepositorio.FaturasRangoFecha(fechaInferior, fechaSuperior);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(string fecha)
+        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(decimal rangoInferior, decimal rangoSuperior)
         {
             var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FaturaArticulosOrdenRango(fecha);
+            var laFactura = elRepositorio.FaturaArticulosOrdenRango(rangoInferior, rangoSuperior);
+            return laFactura;
+        }
+
+        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento)
+        {
+            var elRepositorio = new Repositorio.Factura();
+            var laFactura = elRepositorio.FaturaMontoDescuento(descuento);
             return laFactura;
         }
 
@@ -30,12 +39,7 @@ namespace  AW.WCF.Dominio.Especificaciones
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(int fecha)
-        {
-            var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FaturaMontoDescuento(fecha);
-            return laFactura;
-        }
+        
 
         public IList<Model.SalesOrderHeader> FaturasRangoTotal(int fecha)
         {
