@@ -45,17 +45,17 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(facturaViewModel.ToList());
         }
 
-        //public ActionResult IndexViewModelMontoDescuento()
-        //{
-        //    decimal monto1 = 38;
-        //    decimal monto2 = (decimal)50.55;
+        public ActionResult IndexViewModelMontoDescuento()
+        {
+            decimal monto1 = 38;
+            decimal monto2 = (decimal)50.55;
 
-        //    var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
-        //    var factura = laAccion.FacturaMontoDescuento(monto1, monto2);
-        //    var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
-        //    var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
-        //    return View(facturaViewModel.ToList());
-        //}
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturaMontoDescuento(monto1, monto2);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
+        }
 
         public ActionResult IndexViewModelOrdenRango()
         {

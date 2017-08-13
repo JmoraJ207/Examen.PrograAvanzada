@@ -29,8 +29,8 @@ namespace Ulatina.PrograAvanzada.AW.WCF
         [OperationContract]
         IList<Model.SalesOrderHeader> FacturasRangoTotal(decimal rangoInferior, decimal rangoSuperior);
 
-        //[OperationContract]
-        //IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor);
+        [OperationContract]
+        IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor);
 
         [OperationContract]
         IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor);
@@ -38,11 +38,11 @@ namespace Ulatina.PrograAvanzada.AW.WCF
         [OperationContract]
         IList<Model.SalesOrderHeader> FacturaGeneroEspecVendedor(string genero);
 
-        //[OperationContract]
-        //IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor);
+        [OperationContract]
+        IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor);
 
-        //[OperationContract]
-        //IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha);
+        [OperationContract]
+        IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha);
 
         [OperationContract]
         IList<Model.SalesOrderHeader> FacturasVendedoresTextEespeciNomoApell(string Nombre, string Apellido);
