@@ -6,33 +6,14 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace AW.WCF
+namespace Ulatina.PrograAvanzada.AW.WCF
 
 
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IService1
-    {
-        //    a.Lista de facturas por rango de fecha de la orden.
-
-        //b.Lista de facturas por rango de total.
-
-
-        //c.Lista de facturas que incluyan al menos una línea de detalle cuyo monto total de descuento exceda un monto en específico.
-
-        //d.Lista de facturas que incluyan al menos una línea de detalle cuya cantidad de artículos de la orden esté en un rango específico.
-
-        //e.Lista de facturas de un género específico de vendedor.
-
-        //f.Lista de facturas de vendedores que tengan un rango específico de edad.
-
-        //g.Lista de facturas de vendedores que tengan un rango específico de antigüedad de trabajo en la empresa.
-
-        //h.Lista de facturas de vendedores que tengan un texto específico en el apellido o en el nombre.
-
-
-        /*prueba github*/
+    {      
 
         [OperationContract]
         string GetData(int value);
@@ -43,30 +24,32 @@ namespace AW.WCF
         
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior);
+        IList<Model.SalesOrderHeader> FacturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasRangoTotal(decimal rangoInferior, decimal rangoSuperior);
+        IList<Model.SalesOrderHeader> FacturasRangoTotal(decimal rangoInferior, decimal rangoSuperior);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento);
+        IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(string fecha);
-
-
-        [OperationContract]
-        IList<Model.SalesOrderHeader> FaturaGeneroEspecVendedor(string fecha);
-
+        IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasVendedoresRangoEdad(int fecha);
+        IList<Model.SalesOrderHeader> FacturaGeneroEspecVendedor(string genero);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasVendedoresRangAntiguedad(int fecha);
+        IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FaturasVendedoresTextEespeciNomoApell(string fecha);
+        IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha);
+
+        [OperationContract]
+        IList<Model.SalesOrderHeader> FacturasVendedoresTextEespeciNomoApell(string Nombre, string Apellido);
+
+
+
+
 
 
 

@@ -93,6 +93,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ulatina.PrograAvanzada.AW.Model\Ulatina.PrograAvanzada.AW.Model.csproj">
+      <Project>{d520e882-ff8a-4248-8638-c03fff520b4d}</Project>
+      <Name>Ulatina.PrograAvanzada.AW.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

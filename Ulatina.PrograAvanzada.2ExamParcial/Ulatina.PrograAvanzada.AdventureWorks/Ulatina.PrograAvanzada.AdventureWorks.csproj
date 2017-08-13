@@ -211,6 +211,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ulatina.PrograAvanzada.AW.Model\Ulatina.PrograAvanzada.AW.Model.csproj">
+      <Project>{d520e882-ff8a-4248-8638-c03fff520b4d}</Project>
+      <Name>Ulatina.PrograAvanzada.AW.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ulatina.PrograAvanzada.AW.WCF\Ulatina.PrograAvanzada.AW.WCF.csproj">
       <Project>{0a6f689d-8cfb-4087-914e-3a6674a334b9}</Project>
       <Name>Ulatina.PrograAvanzada.AW.WCF</Name>

@@ -2,63 +2,61 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AW.WCF.Dominio.Repositorio
+namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
 {
     public class Factura
     {
-        static Model.AdventureWorks2014Entities _Contexto = new Model.AdventureWorks2014Entities();
+        static Ulatina.PrograAvanzada.AW.Model.AdventureWorks2014Entities _Contexto = new Ulatina.PrograAvanzada.AW.Model.AdventureWorks2014Entities();
 
         public Factura()
         {
         }               
 
-        public IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => fechaInferior <= p.DueDate && p.DueDate <= fechaSuperior).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => fechaInferior <= p.DueDate && p.DueDate <= fechaSuperior).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(decimal rangoInferior, decimal rangoSuperior)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasRangoTotal(decimal rangoInferior, decimal rangoSuperior)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => rangoInferior <= p.TotalDue && p.TotalDue <= rangoSuperior).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => rangoInferior <= p.TotalDue && p.TotalDue <= rangoSuperior).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.sa)
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.UnitPriceDiscount && p.SalesOrderDetail.UnitPriceDiscount <= descuentoMayor).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaGeneroEspecVendedor(string fecha)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => cantidadArticuloMenor <= p.SalesOrderDetail.LineTotal && p.SalesOrderDetail.LineTotal <= cantidadArticuloMayor).ToList();
             return laFactura;
         }
 
-        
-
-        public IList<Model.SalesOrderHeader> FaturasRangoTotal(int fecha)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaGeneroEspecVendedor(string genero)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesPerson.Employee.Gender.Equals(genero)).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresRangAntiguedad(int fecha)
-        {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
+        {            
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => edadMenor <= p.SalesOrderDetail.LineTotal && p.SalesOrderDetail.LineTotal <= edadMayor).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresRangoEdad(int fecha)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.DueDate.Contains(fecha)).ToList();
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresTextEespeciNomoApell(string fecha)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresTextEespeciNomoApell(string Nombre, string Apellido)
         {
-            var laFactura = _Contexto.SalesOrderHeader.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesPerson.Employee.Person.FirstName.Equals(Nombre) && p.SalesPerson.Employee.Person.LastName.Equals(Apellido)).ToList();
             return laFactura;
         }
     }

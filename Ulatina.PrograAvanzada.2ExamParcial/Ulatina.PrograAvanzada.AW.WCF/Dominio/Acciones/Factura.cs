@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AW.WCF.Dominio.Acciones
+namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones
 {
     public class Factura
     {
@@ -9,61 +9,59 @@ namespace AW.WCF.Dominio.Acciones
         {
         }       
 
-        public IList<Model.SalesOrderHeader> FaturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
+        public IList<Model.SalesOrderHeader> FacturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturasRangoFecha(fechaInferior, fechaSuperior);
+            var laFactura = laEspecificacion.FacturasRangoFecha(fechaInferior, fechaSuperior);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaArticulosOrdenRango(decimal rangoInferior, decimal rangoSuperior)
+        public IList<Model.SalesOrderHeader> FacturasRangoTotal(decimal rangoInferior, decimal rangoSuperior)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturaArticulosOrdenRango(rangoInferior, rangoSuperior);
+            var laFactura = laEspecificacion.FacturasRangoTotal(rangoInferior, rangoSuperior);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturaMontoDescuento(decimal descuento)
+        public IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturaMontoDescuento(descuento);
+            var laFactura = laEspecificacion.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
             return laFactura;
         }
 
-        public  IList<Model.SalesOrderHeader> FaturaGeneroEspecVendedor(string fecha)
+        public IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturaGeneroEspecVendedor(fecha);
+            var laFactura = laEspecificacion.FacturaArticulosOrdenRango(cantidadArticuloMenor, cantidadArticuloMayor);
             return laFactura;
         }
 
-        
-
-        public IList<Model.SalesOrderHeader> FaturasRangoTotal(int fecha)
+        public IList<Model.SalesOrderHeader> FacturaGeneroEspecVendedor(string genero)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturasRangoTotal(fecha);
+            var laFactura = laEspecificacion.FacturaGeneroEspecVendedor(genero);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresRangAntiguedad(int fecha)
+        public IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturasVendedoresRangAntiguedad(fecha);
+            var laFactura = laEspecificacion.FacturasVendedoresRangoEdad(edadMenor, edadMayor);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresRangoEdad(int fecha)
+        public IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturasVendedoresRangoEdad(fecha);
+            var laFactura = laEspecificacion.FacturasVendedoresRangAntiguedad(fecha);
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FaturasVendedoresTextEespeciNomoApell(string fecha)
+        public IList<Model.SalesOrderHeader> FacturasVendedoresTextEespeciNomoApell(string Nombre, string Apellido)
         {
             var laEspecificacion = new Especificaciones.Factura();
-            var laFactura = laEspecificacion.FaturasVendedoresTextEespeciNomoApell(fecha);
+            var laFactura = laEspecificacion.FacturasVendedoresTextEespeciNomoApell(Nombre, Apellido);
             return laFactura;
         }
     }
