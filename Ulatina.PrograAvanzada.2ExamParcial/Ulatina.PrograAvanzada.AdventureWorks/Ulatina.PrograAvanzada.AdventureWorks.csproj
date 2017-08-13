@@ -199,6 +199,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesOrderHeadersController.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +259,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\Create.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\Delete.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\Details.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\Edit.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

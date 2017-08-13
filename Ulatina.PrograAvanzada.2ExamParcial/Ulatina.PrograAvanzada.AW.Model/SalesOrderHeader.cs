@@ -14,8 +14,12 @@ namespace Ulatina.PrograAvanzada.AW.Model
     
     public partial class SalesOrderHeader
     {
-        
-    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SalesOrderHeader()
+        {
+            this.SalesOrderDetails = new HashSet<SalesOrderDetail>();
+        }
+
         public int SalesOrderID { get; set; }
         public byte RevisionNumber { get; set; }
         public System.DateTime OrderDate { get; set; }
@@ -43,8 +47,8 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
         public virtual SalesOrderDetail SalesOrderDetail { get; set; }
-        
-        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
         public virtual SalesPerson SalesPerson { get; set; }
     }
 }
