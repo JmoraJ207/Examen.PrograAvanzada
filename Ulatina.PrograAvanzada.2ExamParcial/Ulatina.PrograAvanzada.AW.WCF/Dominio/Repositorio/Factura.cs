@@ -50,7 +50,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
 
         public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.DueDate.Contains(fecha)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesOrderDetail.LineTotal == fecha).ToList();
             return laFactura;
         }
 
