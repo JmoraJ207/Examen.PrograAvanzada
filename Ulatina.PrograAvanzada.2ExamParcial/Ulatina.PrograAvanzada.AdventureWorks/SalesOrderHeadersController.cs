@@ -21,10 +21,10 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(salesOrderHeaders.ToList());
         }
 
-        public ActionResult IndexViewModel()
+        public ActionResult IndexViewModelFecha()
         {
-            DateTime laFecha = new DateTime(2010, 05, 6,00,00,00,000);
-            DateTime laFecha2 = new DateTime(2010, 04, 3, 00, 00, 00, 000);
+            DateTime laFecha = new DateTime(2011, 11, 26,00,00,00,000);
+            DateTime laFecha2 = new DateTime(2012, 01, 03, 00, 00, 00, 000);
 
             var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
             var factura = laAccion.FacturasRangoFecha(laFecha, laFecha2);
@@ -33,23 +33,64 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(facturaViewModel.ToList());
         }
 
-
-        public ActionResult IndexViewModelFecha()
+        public ActionResult IndexViewModelRangoTotal()
         {
-            //string elNombre = "Blade";
-            //var laAccion = new AW.WCF.Dominio.Acciones.Productos();
-            //var products = laAccion.BuscarProductoPorNombre(elNombre);
-            //var laAccionViewModel = new Dominio.Acciones.ConvertirProductEnViewModel();
-            //var productsViewModel = laAccionViewModel.ConviertaListaDeProductos(products);
-            //return View(productsViewModel.ToList());
+            decimal monto1 = 23150;
+            decimal monto2 = (decimal)231254.23;
 
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturasRangoTotal(monto1, monto2);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
+        }
+
+        //public ActionResult IndexViewModelMontoDescuento()
+        //{
+        //    decimal monto1 = 38;
+        //    decimal monto2 = (decimal)50.55;
+
+        //    var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+        //    var factura = laAccion.FacturaMontoDescuento(monto1, monto2);
+        //    var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+        //    var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+        //    return View(facturaViewModel.ToList());
+        //}
+
+        public ActionResult IndexViewModelOrdenRango()
+        {
+            decimal monto1 = 1;
+            decimal monto2 = (decimal)100.15;
+
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturaArticulosOrdenRango(monto1, monto2);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
+        }
+
+        public ActionResult IndexViewModelGenero()
+        {
             string elNombre = "M";
             var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
             var factura = laAccion.FacturaGeneroEspecVendedor(elNombre);
             var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
             var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
             return View(facturaViewModel.ToList());
+        }       
+
+        public ActionResult IndexViewModelNombre()
+        {
+            string elNombre = "José";
+            string elApellido = "Saraiva";
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturasVendedoresTextEespeciNomoApell(elNombre,elApellido);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
         }
+
+
 
 
 

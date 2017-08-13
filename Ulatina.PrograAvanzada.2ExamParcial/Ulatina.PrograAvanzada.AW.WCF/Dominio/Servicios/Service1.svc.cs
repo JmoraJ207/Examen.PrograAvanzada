@@ -31,14 +31,14 @@ namespace Ulatina.PrograAvanzada.AW.WCF
             return laFactura;
         }
 
-        public IList<SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
-        {
-            var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
-            return laFactura;
-        }
+        //public IList<SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
+        //{
+        //    var laAccion = new Dominio.Acciones.Factura();
+        //    var laFactura = laAccion.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
+        //    return laFactura;
+        //}
 
-        public IList<SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor)
+        public IList<SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor)
         {
             var laAccion = new Dominio.Acciones.Factura();
             var laFactura = laAccion.FacturaArticulosOrdenRango(cantidadArticuloMenor,cantidadArticuloMayor);
@@ -52,19 +52,19 @@ namespace Ulatina.PrograAvanzada.AW.WCF
             return laFactura;
         }
 
-        public IList<SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
-        {
-            var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FacturasVendedoresRangoEdad(edadMenor, edadMayor);
-            return laFactura;
-        }
+        //public IList<SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
+        //{
+        //    var laAccion = new Dominio.Acciones.Factura();
+        //    var laFactura = laAccion.FacturasVendedoresRangoEdad(edadMenor, edadMayor);
+        //    return laFactura;
+        //}
 
-        public IList<SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
-        {
-            var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FacturasVendedoresRangAntiguedad(fecha);
-            return laFactura;
-        }
+        //public IList<SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
+        //{
+        //    var laAccion = new Dominio.Acciones.Factura();
+        //    var laFactura = laAccion.FacturasVendedoresRangAntiguedad(fecha);
+        //    return laFactura;
+        //}
 
 
 

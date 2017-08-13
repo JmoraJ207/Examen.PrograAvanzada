@@ -28,6 +28,11 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Dominio.Acciones
                     laFacturaViewModel.LineTotal = decimal.Zero;
 
                 if (laFactura.SalesPerson.Employee.Person != null)
+                    laFacturaViewModel.Gender = laFactura.SalesPerson.Employee.Gender;
+                else
+                    laFacturaViewModel.Gender = string.Empty;
+
+                if (laFactura.SalesPerson.Employee.Person != null)
                     laFacturaViewModel.FirstName = laFactura.SalesPerson.Employee.Person.FirstName;
                 else
                     laFacturaViewModel.FirstName = string.Empty;
@@ -37,10 +42,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Dominio.Acciones
                 else
                     laFacturaViewModel.LastName = string.Empty;
 
-                if (laFactura.SalesPerson.Employee != null)
-                    laFacturaViewModel.Gender = laFactura.SalesPerson.Employee.Gender;
-                else
-                    laFacturaViewModel.Gender = string.Empty;
+
 
                 elResultado.Add(laFacturaViewModel);
             }

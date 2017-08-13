@@ -25,14 +25,14 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Especificaciones
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
-        {
-            var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
-            return laFactura;
-        }
+        //public IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
+        //{
+        //    var elRepositorio = new Repositorio.Factura();
+        //    var laFactura = elRepositorio.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
+        //    return laFactura;
+        //}
 
-        public IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor)
+        public IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor)
         {
             var elRepositorio = new Repositorio.Factura();
             var laFactura = elRepositorio.FacturaArticulosOrdenRango(cantidadArticuloMenor, cantidadArticuloMayor);
@@ -46,19 +46,19 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Especificaciones
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
-        {
-            var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FacturasVendedoresRangoEdad(edadMenor, edadMayor);
-            return laFactura;
-        }
+        //public IList<Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
+        //{
+        //    var elRepositorio = new Repositorio.Factura();
+        //    var laFactura = elRepositorio.FacturasVendedoresRangoEdad(edadMenor, edadMayor);
+        //    return laFactura;
+        //}
 
-        public IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
-        {
-            var elRepositorio = new Repositorio.Factura();
-            var laFactura = elRepositorio.FacturasVendedoresRangAntiguedad(fecha);
-            return laFactura;
-        }
+        //public IList<Model.SalesOrderHeader> FacturasVendedoresRangAntiguedad(int fecha)
+        //{
+        //    var elRepositorio = new Repositorio.Factura();
+        //    var laFactura = elRepositorio.FacturasVendedoresRangAntiguedad(fecha);
+        //    return laFactura;
+        //}
 
         public IList<Model.SalesOrderHeader> FacturasVendedoresTextEespeciNomoApell(string Nombre, string Apellido)
         {

@@ -24,13 +24,13 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
             return laFactura;
         }
 
-        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
-        {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.UnitPriceDiscount && p.SalesOrderDetail.UnitPriceDiscount <= descuentoMayor).ToList();
-            return laFactura;
-        }
+        //public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
+        //{
+        //    var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.UnitPriceDiscount && p.SalesOrderDetail.UnitPriceDiscount <= descuentoMayor).ToList();
+        //    return laFactura;
+        //}
 
-        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaArticulosOrdenRango(int cantidadArticuloMenor, int cantidadArticuloMayor)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor)
         {
             var laFactura = _Contexto.SalesOrderHeaders.Where(p => cantidadArticuloMenor <= p.SalesOrderDetail.LineTotal && p.SalesOrderDetail.LineTotal <= cantidadArticuloMayor).ToList();
             return laFactura;
@@ -59,5 +59,8 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
             var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesPerson.Employee.Person.FirstName.Equals(Nombre) && p.SalesPerson.Employee.Person.LastName.Equals(Apellido)).ToList();
             return laFactura;
         }
+
+
+        
     }
 }

@@ -14,6 +14,12 @@ namespace Ulatina.PrograAvanzada.AW.Model
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.SalesPersons = new HashSet<SalesPerson>();
+        }
+
         public int BusinessEntityID { get; set; }
         public string NationalIDNumber { get; set; }
         public string LoginID { get; set; }
@@ -32,5 +38,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
     
         public virtual Person Person { get; set; }
         public virtual SalesPerson SalesPerson { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SalesPerson> SalesPersons { get; set; }
     }
 }

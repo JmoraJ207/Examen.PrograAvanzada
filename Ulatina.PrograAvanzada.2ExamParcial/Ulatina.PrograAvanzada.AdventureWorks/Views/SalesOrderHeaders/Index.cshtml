@@ -16,7 +16,12 @@
         <th>
             @Html.DisplayNameFor(model => model.SalesPerson.Employee.Gender)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.SalesOrderDetail.LineTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesOrderDetail.UnitPriceDiscount)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.RevisionNumber)
         </th>
@@ -99,6 +104,12 @@
     <tr>
         <th>
             @Html.DisplayFor(model => item.SalesPerson.Employee.Gender)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.SalesOrderDetail.LineTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.SalesOrderDetail.UnitPriceDiscount)
         </th>
         <td>
             @Html.DisplayFor(modelItem => item.RevisionNumber)

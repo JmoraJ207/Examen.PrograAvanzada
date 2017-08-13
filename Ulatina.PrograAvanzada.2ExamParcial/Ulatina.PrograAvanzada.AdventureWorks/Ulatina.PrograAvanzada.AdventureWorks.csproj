@@ -266,8 +266,13 @@
     <Content Include="Views\SalesOrderHeaders\Details.cshtml" />
     <Content Include="Views\SalesOrderHeaders\Edit.cshtml" />
     <Content Include="Views\SalesOrderHeaders\Index.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\IndexViewModelFecha.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelGenero.cshtml" />
     <Content Include="Views\SalesOrderHeaders\IndexViewModel.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelFecha.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelRangoTotal.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelMontoDescuento.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelOrdenRango.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\IndexViewModelNombre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

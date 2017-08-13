@@ -14,6 +14,8 @@ namespace Ulatina.PrograAvanzada.AW.Model
     
     public partial class SalesOrderDetail
     {
+       
+
         public int SalesOrderID { get; set; }
         public int SalesOrderDetailID { get; set; }
         public string CarrierTrackingNumber { get; set; }
@@ -27,5 +29,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual SalesOrderHeader SalesOrderHeader { get; set; }
+
+        
     }
 }

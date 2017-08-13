@@ -14,6 +14,12 @@ namespace Ulatina.PrograAvanzada.AW.Model
     
     public partial class Person
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Person()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
+
         public int BusinessEntityID { get; set; }
         public string PersonType { get; set; }
         public bool NameStyle { get; set; }
@@ -29,5 +35,8 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual Employee Employee { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }
