@@ -21,6 +21,18 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(salesOrderHeaders.ToList());
         }
 
+        public ActionResult Index1()
+        {
+            DateTime laFecha = new DateTime(2010, 05, 6,00,00,00,000);
+            DateTime laFecha2 = new DateTime(2010, 04, 3, 00, 00, 00, 000);
+
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturasRangoFecha(laFecha, laFecha2);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
+        }
+
         // GET: SalesOrderHeaders/Details/5
         public ActionResult Details(int? id)
         {
