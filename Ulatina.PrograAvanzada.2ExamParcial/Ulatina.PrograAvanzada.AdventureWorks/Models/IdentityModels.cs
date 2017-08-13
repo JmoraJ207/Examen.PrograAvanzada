@@ -29,5 +29,14 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> SalesOrderHeader { get; set; }
+
+        public System.Data.Entity.DbSet<Ulatina.PrograAvanzada.AW.Model.SalesOrderDetail> SalesOrderDetail { get; set; }
+
+        public System.Data.Entity.DbSet<Ulatina.PrograAvanzada.AW.Model.Employee> Employee { get; set; }
+        public System.Data.Entity.DbSet<Ulatina.PrograAvanzada.AW.Model.SalesPerson> SalesPerson { get; set; }
+        public System.Data.Entity.DbSet<Ulatina.PrograAvanzada.AW.Model.Person> Person { get; set; }
+
     }
 }

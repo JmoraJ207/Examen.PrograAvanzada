@@ -24,5 +24,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
         public System.Data.Entity.DbSet<AW.Model.SalesOrderDetail> SalesOrderDetails { get; set; }
 
         public System.Data.Entity.DbSet<AW.Model.SalesPerson> SalesPersons { get; set; }
+
+        public System.Data.Entity.DbSet<AW.Model.Employee> Employee { get; set; }
     }
 }

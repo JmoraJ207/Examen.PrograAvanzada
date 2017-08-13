@@ -12,7 +12,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 {
     public class SalesOrderHeadersController : Controller
     {
-        private AdventureWorks2014Entities db = new AdventureWorks2014Entities();
+        private AdventureWorks2014EntitiesContext db = new AdventureWorks2014EntitiesContext();
 
         // GET: SalesOrderHeaders
         public ActionResult Index()
@@ -21,7 +21,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(salesOrderHeaders.ToList());
         }
 
-        public ActionResult IndexViewModel1()
+        public ActionResult IndexViewModel()
         {
             DateTime laFecha = new DateTime(2010, 05, 6,00,00,00,000);
             DateTime laFecha2 = new DateTime(2010, 04, 3, 00, 00, 00, 000);
@@ -32,6 +32,27 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
             return View(facturaViewModel.ToList());
         }
+
+
+        public ActionResult IndexViewModelFecha()
+        {
+            //string elNombre = "Blade";
+            //var laAccion = new AW.WCF.Dominio.Acciones.Productos();
+            //var products = laAccion.BuscarProductoPorNombre(elNombre);
+            //var laAccionViewModel = new Dominio.Acciones.ConvertirProductEnViewModel();
+            //var productsViewModel = laAccionViewModel.ConviertaListaDeProductos(products);
+            //return View(productsViewModel.ToList());
+
+            string elNombre = "M";
+            var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
+            var factura = laAccion.FacturaGeneroEspecVendedor(elNombre);
+            var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
+            var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
+            return View(facturaViewModel.ToList());
+        }
+
+
+
 
         // GET: SalesOrderHeaders/Details/5
         public ActionResult Details(int? id)
