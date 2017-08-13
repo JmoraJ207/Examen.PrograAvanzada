@@ -21,7 +21,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(salesOrderHeaders.ToList());
         }
 
-        public ActionResult Index1()
+        public ActionResult IndexViewModel1()
         {
             DateTime laFecha = new DateTime(2010, 05, 6,00,00,00,000);
             DateTime laFecha2 = new DateTime(2010, 04, 3, 00, 00, 00, 000);
