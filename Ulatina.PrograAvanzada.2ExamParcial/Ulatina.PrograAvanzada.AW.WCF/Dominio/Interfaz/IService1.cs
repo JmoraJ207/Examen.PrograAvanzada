@@ -33,7 +33,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF
         IList<Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor);
 
         [OperationContract]
-        IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor);
+        IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(short cantidadArticuloMenor, short cantidadArticuloMayor);
 
         [OperationContract]
         IList<Model.SalesOrderHeader> FacturaGeneroEspecVendedor(string genero);

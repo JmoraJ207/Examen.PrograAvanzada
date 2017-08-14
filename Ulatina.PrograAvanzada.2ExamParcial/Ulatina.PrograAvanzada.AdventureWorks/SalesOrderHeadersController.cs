@@ -47,8 +47,8 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 
         public ActionResult IndexViewModelMontoDescuento()
         {
-            decimal monto1 = 38;
-            decimal monto2 = (decimal)50.55;
+            decimal monto1 = 1;
+            decimal monto2 = (decimal)10000.55;
 
             var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
             var factura = laAccion.FacturaMontoDescuento(monto1, monto2);
@@ -59,8 +59,8 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 
         public ActionResult IndexViewModelOrdenRango()
         {
-            decimal monto1 = 1;
-            decimal monto2 = (decimal)100.15;
+            short monto1 = 1;
+            short monto2 = 30;
 
             var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
             var factura = laAccion.FacturaArticulosOrdenRango(monto1, monto2);

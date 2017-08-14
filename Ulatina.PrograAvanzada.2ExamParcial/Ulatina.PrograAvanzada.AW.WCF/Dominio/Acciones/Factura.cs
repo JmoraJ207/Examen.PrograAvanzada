@@ -30,7 +30,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones
             return laFactura;
         }
 
-        public IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor)
+        public IList<Model.SalesOrderHeader> FacturaArticulosOrdenRango(short cantidadArticuloMenor, short cantidadArticuloMayor)
         {
             var laEspecificacion = new Especificaciones.Factura();
             var laFactura = laEspecificacion.FacturaArticulosOrdenRango(cantidadArticuloMenor, cantidadArticuloMayor);

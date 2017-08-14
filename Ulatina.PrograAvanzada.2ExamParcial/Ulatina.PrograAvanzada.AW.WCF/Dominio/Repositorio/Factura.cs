@@ -26,13 +26,13 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
 
         public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.ProductID && p.SalesOrderDetail.ProductID  <= descuentoMayor).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesOrderDetails.Any(a=>a.UnitPriceDiscount > descuentoMenor) && p.SalesOrderDetails.Any(a=>a.UnitPriceDiscount < descuentoMayor)).ToList();
             return laFactura;
         }
 
-        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaArticulosOrdenRango(decimal cantidadArticuloMenor, decimal cantidadArticuloMayor)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaArticulosOrdenRango(short cantidadArticuloMenor, short cantidadArticuloMayor)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => cantidadArticuloMenor <= p.SalesOrderDetail.LineTotal && p.SalesOrderDetail.LineTotal <= cantidadArticuloMayor).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesOrderDetails.Any(c=>c.OrderQty > cantidadArticuloMenor) && p.SalesOrderDetails.Any(c=>c.OrderQty < cantidadArticuloMayor)).ToList();
             return laFactura;
         }
 
