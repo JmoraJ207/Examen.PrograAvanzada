@@ -27,8 +27,10 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public string NombreCompleto { get; set; }
         public string Suffix { get; set; }
         public int EmailPromotion { get; set; }
+        public int EdadEmpleado { get; set; }
         public string AdditionalContactInfo { get; set; }
         public string Demographics { get; set; }
         public System.Guid rowguid { get; set; }

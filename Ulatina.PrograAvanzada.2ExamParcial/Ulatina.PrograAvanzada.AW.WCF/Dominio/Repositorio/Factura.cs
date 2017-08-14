@@ -24,9 +24,9 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
             return laFactura;
         }
 
-        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuento)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesOrderDetails.Any(a=>a.UnitPriceDiscount > descuentoMenor) && p.SalesOrderDetails.Any(a=>a.UnitPriceDiscount < descuentoMayor)).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => p.SalesOrderDetails.Any(a=>a.UnitPriceDiscount > descuento) ).ToList();
             return laFactura;
         }
 
@@ -42,7 +42,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
             return laFactura;
         }
 
-        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor)
+        public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasVendedoresRangoEdad(int edadMenor, int edadMayor) 
         {            
             var laFactura = _Contexto.SalesOrderHeaders.Where(p => edadMenor <= p.SalesOrderDetail.LineTotal && p.SalesOrderDetail.LineTotal <= edadMayor).ToList();
             return laFactura;

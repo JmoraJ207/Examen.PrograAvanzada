@@ -29,6 +29,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public string MaritalStatus { get; set; }
         public string Gender { get; set; }
         public System.DateTime HireDate { get; set; }
+        public int AntiguedadEmpleado { get; set; }
         public bool SalariedFlag { get; set; }
         public short VacationHours { get; set; }
         public short SickLeaveHours { get; set; }

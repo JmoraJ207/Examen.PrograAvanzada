@@ -40,6 +40,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public string CreditCardApprovalCode { get; set; }
         public Nullable<int> CurrencyRateID { get; set; }
         public decimal SubTotal { get; set; }
+        public decimal MontoTotalDescuento { get; set; }
         public decimal TaxAmt { get; set; }
         public decimal Freight { get; set; }
         public decimal TotalDue { get; set; }

@@ -31,10 +31,10 @@ namespace Ulatina.PrograAvanzada.AW.WCF
             return laFactura;
         }
 
-        public IList<SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
+        public IList<SalesOrderHeader> FacturaMontoDescuento(decimal descuento)
         {
             var laAccion = new Dominio.Acciones.Factura();
-            var laFactura = laAccion.FacturaMontoDescuento(descuentoMenor, descuentoMayor);
+            var laFactura = laAccion.FacturaMontoDescuento(descuento);
             return laFactura;
         }
 

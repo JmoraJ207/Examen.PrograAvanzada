@@ -47,11 +47,11 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 
         public ActionResult IndexViewModelMontoDescuento()
         {
-            decimal monto1 = 1;
-            decimal monto2 = (decimal)10000.55;
+            decimal monto1 = 40;
+            
 
             var laAccion = new Ulatina.PrograAvanzada.AW.WCF.Dominio.Acciones.Factura();
-            var factura = laAccion.FacturaMontoDescuento(monto1, monto2);
+            var factura = laAccion.FacturaMontoDescuento(monto1);
             var laAccionViewModel = new Dominio.Acciones.ConvertirFacturaEnViewModel();
             var facturaViewModel = laAccionViewModel.ConviertaListaDeFacturas(factura);
             return View(facturaViewModel.ToList());
