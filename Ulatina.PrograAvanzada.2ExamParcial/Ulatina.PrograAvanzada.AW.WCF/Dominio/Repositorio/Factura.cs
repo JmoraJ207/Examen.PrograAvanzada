@@ -26,7 +26,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
 
         public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturaMontoDescuento(decimal descuentoMenor, decimal descuentoMayor)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.UnitPriceDiscount && p.SalesOrderDetail.UnitPriceDiscount <= descuentoMayor).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => descuentoMenor <= p.SalesOrderDetail.ProductID && p.SalesOrderDetail.ProductID  <= descuentoMayor).ToList();
             return laFactura;
         }
 

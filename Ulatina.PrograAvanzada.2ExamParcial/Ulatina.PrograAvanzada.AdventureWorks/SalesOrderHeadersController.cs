@@ -113,7 +113,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
         // GET: SalesOrderHeaders/Create
         public ActionResult Create()
         {
-            ViewBag.SalesPersonID = new SelectList(db.SalesPersons, "BusinessEntityID", "BusinessEntityID");
+            ViewBag.SalesPersonID = new SelectList(db.SalesPersons, "BusinessEntityID", "BusinessEntityID");           
             return View();
         }
 
