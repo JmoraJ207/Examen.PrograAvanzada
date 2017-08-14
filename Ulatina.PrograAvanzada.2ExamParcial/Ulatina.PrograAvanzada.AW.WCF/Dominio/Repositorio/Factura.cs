@@ -14,7 +14,7 @@ namespace Ulatina.PrograAvanzada.AW.WCF.Dominio.Repositorio
 
         public IList<Ulatina.PrograAvanzada.AW.Model.SalesOrderHeader> FacturasRangoFecha(DateTime fechaInferior, DateTime fechaSuperior)
         {
-            var laFactura = _Contexto.SalesOrderHeaders.Where(p => fechaInferior <= p.DueDate && p.DueDate <= fechaSuperior).ToList();
+            var laFactura = _Contexto.SalesOrderHeaders.Where(p => fechaInferior <= p.OrderDate && p.OrderDate <= fechaSuperior).ToList();
             return laFactura;
         }
 
